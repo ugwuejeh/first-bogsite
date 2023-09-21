@@ -15,5 +15,5 @@ class Authoradmin(admin.ModelAdmin):
         
 @admin.register(post)
 class Postadmin(admin.ModelAdmin):
-        list_display = ('title', 'body', 'upload_image', 'date_created', 'updated_on', 'author', 'category')
+        list_display = ('title', 'body', 'upload_image', 'date_created', 'updated_on', 'author', 'category', 'status')
         

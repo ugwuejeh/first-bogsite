@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+{% extends "header.html" %}
+
+{% load static %}
+
+
+    {% block content %}
+
+    <html lang="en">
+
+<style>
+  .btn{
+    margin-right: 20px;
+  }
+    
+</style>
+
+    <body>
+        <!-- Responsive navbar-->
+       
+        <!-- Page header with logo and tagline-->
+        <header class="py-5 bg-light border-bottom mb-2">
+            {% comment %} dashbord  {% endcomment %}
+            
+        </header>
+    
+        <div class="container">
+            
+        <div class="row mt-5 pt-3">
+         <div class="col-md-6 offset-md-3">
+            <div class="card my-3 shadow">
+                <div class="card-body">
+                
+                    <span><button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Update Profile
+                    </button></span>
+                    
+          
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="img-thumbnail" src="{{user.profilemodel.upload_image.url}}" alt="profile-img">
+                        </div>
+                        <div class="col-md-8">
+                            <h4>Name: {{user.username}}</h4>
+                            <h4>Email: {{user.email}}</h4>
+                        </div>
+                     </div>
+                
+                </div>
+            </div>
+
+         </div>
+        </div>
+        
+        
+        </div>
+       
+        <!-- Footer-->
+        {% include "footer.html" %}
+
+        
+    </body>
+    
+     <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Update Profile Information</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancil</button>
+          <button type="button" class="btn btn-primary btn-sm">Save Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
+     {% endblock content %}
+</html>

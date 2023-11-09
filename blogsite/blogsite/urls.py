@@ -23,6 +23,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     
     path('', include('bloghome.urls')),
+    path('users/', include('user.urls')),
+    path('usere/', include('usere.urls')),
     
     path('admin/', admin.site.urls),
  ] 

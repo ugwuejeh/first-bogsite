@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+{% extends "header.html" %}
+
+{% load static %}
+
+
+    {% block content %}
+      <style>
+        .form-con{
+            width: 50%;
+            margin: auto;
+            margin-bottom: 50px;
+        }
+        .btn1{
+            text-align: center;
+        
+        }
+        button{
+            width: 35%;
+
+        }
+        .btn-success{
+            font-size: 20px;
+        }
+      </style>
+    <html lang="en">
+
+    <body>
+        <!-- Responsive navbar-->
+       
+        <!-- Page header with logo and tagline-->
+            <div class="container">
+
+                <div class="container">
+                    <div class="text-center my-5 text-success">
+                        <h3>Create Your Blog Post Here</h3>
+                        <!-- <h2>{{category}}</h2> -->
+                    </div>
+                </div>
+            
+                <div class="container-form">
+                
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                     <div class="form-con">
+                        <div class="mb-3">
+                            <input type="text" name="title" id="" placeholder="Post title" class="form-control">
+                        </div>
+                         
+
+                        <div class="mb-3">
+                           <textarea name="body" class="form-control" id="" cols="30" rows="10" placeholder="Enter Message Here"></textarea>
+                        </div>
+                        
+                        <div class="mb-3">
+                         <input type="file" name="upload_image" id="" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            
+                                <select class="form-select" name="category"  aria-label="Default select example">
+                                    
+                                    <option selected>Categories</option>
+                                     {% for category in category %}
+                                     
+                                     
+                                    <option value="{{category.slug}}">{{category.name}}</option>
+                                    {% endfor %}
+                                  </select>
+                        
+                         </div>
+
+                         <div class="mb-3 btn1">
+                            
+                           <button type="submit" class="btn btn-success">Create Post</button>
+                    
+                          </div>
+                      </div>
+         
+                    </form>
+         
+                 </div>
+            </div>
+
+        <!-- Page content-->
+                
+    </div>
+          
+            
+        
+        </div>
+       
+        <!-- Footer-->
+        {% include "footer.html" %}
+
+        
+    </body>
+    
+
+    
+
+     {% endblock content %}
+</html>

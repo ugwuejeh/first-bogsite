@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends "header.html" %}
+
+{% load static %}
+
+<html lang="en">
+{% block content %}
+
+<body>
+    
+    <!-- Page content-->
+    <div class="container mt-5">
+        
+              
+                <section class="mb-5">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                          <div class="alart alart-danger">
+                            Do you want to delete post?
+                          </div>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <a class="btn btn-secondary btn-sm" href="{% url 'details' post.pk %}">Cancil</a>
+                             <input class="btn btn-primary btn-sm" type="submit" value="Confirmed">
+                            </form>
+                          
+                            
+                        </div>
+                        
+                        
+                        
+                    </div>
+                       
+                   
+                </section>
+                
+            </div>
+         
+            <!-- Side widgets-->
+           
+        </div>
+        
+    
+        </body>
+{% include "footer.html" %}
+
+{% endblock content %}
+   
+</html>

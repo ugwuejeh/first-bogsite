@@ -1,0 +1,33 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="card-body">
+    <h4>Book List</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Author</th>
+                <th scope="col">Year</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in Post %}
+            <tr>
+                <td>{{ post.title }}</td>
+                <td>{{ post.body }}</td>
+                <td>{{ post.author }}</td>
+                <td>{{ post.category }}</td>
+                <td>{{ post.date_created }}</td>
+                <td><a type="button" class="btn btn-warning" href="/update_post/{{ post.id }}">Update</a>
+                    <a type="button" class="btn btn-danger" href="/delete_post/{{ post.id }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a type="button" class="btn btn-success" href="{%url 'create_post' %}">Create</a>
+</div>
+{% endblock %}

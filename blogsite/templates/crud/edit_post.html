@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% extends "header.html" %}
+
+{% load static %}
+
+<html lang="en">
+{% block content %}
+
+<body>
+    
+    <!-- Page content-->
+    <div class="container mt-5">
+        
+              
+                <section class="mb-5">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h2>Edit Post</h2>
+                            <form method="post" action="" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <label for="title">Title:</label>
+                                <div class="mb-3">
+                                    <input type="text" id="title" name="title" class="form-control" value="{{ Post.title }}" required><br><br>
+                                </div>
+                               
+                                <label for="content">Content:</label><br>
+                                <div class="mb-3">
+                                    <textarea id="content" name="body" class="form-control" required>{{ Post.body }}</textarea><br><br>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <input type="file" name="upload_image" id="" class="form-control">
+                                   </div>
+                                <button type="submit" class="btn btn-success">Update Post</button>
+                            </form>
+                          
+                            
+                        </div>
+                        
+                        
+                        
+                    </div>
+                       
+                   
+                </section>
+                
+            </div>
+         
+            <!-- Side widgets-->
+           
+        </div>
+        
+    
+        </body>
+{% include "footer.html" %}
+
+{% endblock content %}
+   
+</html>
